@@ -3,6 +3,8 @@
 #   package = "OSUICode"
 # )
 
+# picking a single date will be treated as if a range with the same start and end date was selected
+
 box::use(
   shiny[...],
   shinyWidgets[...],
