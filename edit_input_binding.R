@@ -25,6 +25,10 @@ ui <- fluidPage(
         placeholder = "Select a date",
         clearButton = TRUE,
         range = TRUE
+      ),
+      actionButton(
+        inputId = "calculate",
+        label = "Calculate"
       )
     ),
     mainPanel(
@@ -36,6 +40,10 @@ ui <- fluidPage(
 # Define server logic
 server <- function(input, output) {
   output$selected_date <- renderText({
+    result()
+  })
+
+  result <- eventReactive(input$calculate, {
     paste("You have selected:", input$date)
   })
 
